@@ -1,0 +1,15 @@
+{
+  // Enforcing Options
+  "strict": true,         // Require function strict mode
+  "undef": true,          // Prohibit undefined variables
+  "quotmark": true,       // Require quotes to be consistent within a file
+  "eqeqeq": true,         // Require the use of three-equals
+
+  // Relaxing Options
+  "laxcomma": true,       // Allow comma-first style
+  "asi": true,            // Allow semicolon-free style
+  "eqnull": true,         // Allow use of two-equals for comparison with null
+
+  // Environment Options
+  "browser": true         // Allow browser globals to be used
+}

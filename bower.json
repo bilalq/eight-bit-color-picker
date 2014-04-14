@@ -1,0 +1,21 @@
+{
+  "name": "xterm256-color-picker",
+  "version": "0.0.1",
+  "description": "UI component for picking a color from xterm's 256 color palette",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bilalq/xterm256-color-picker.git"
+  },
+  "ignore": [
+    "*",
+    "!dist/**/*"
+  ],
+  "keywords": [
+    "256",
+    "color",
+    "xterm",
+    "terminal",
+    "picker",
+    "chooser"
+  ]
+}
