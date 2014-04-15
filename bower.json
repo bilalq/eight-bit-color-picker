@@ -1,5 +1,5 @@
 {
-  "name": "256-color-picker",
+  "name": "xterm256-color-picker",
   "version": "0.0.1",
   "description": "UI component for picking a color from xterm's 256 color palette",
   "repository": {
