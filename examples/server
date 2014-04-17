@@ -1,0 +1,53 @@
+#!/usr/bin/env node
+// vim: ft=javascript
+
+/**
+ * Simple HTTP server to serve assets and make it easy to try out the example.
+ *
+ * This is a tad fancy with the time measuring and colored output only because
+ * the author likes pretty outputs to stdout.
+ */
+var http = require('http')
+  , path = require('path')
+  , fs   = require('fs')
+  , port = process.env.port || 3050
+
+http.createServer(function(req, res) {
+  'use strict';
+  var start = process.hrtime()
+
+  if (req.url === '/favicon.ico') {
+    res.writeHead(200, {'Content-Type': 'image/x-icon'})
+    return res.end()
+  }
+
+  var file = __dirname + '/index.html'
+    , type = 'text/html'
+  if (/.+\.js/.test(req.url)) {
+    file = __dirname + '/../lib/xterm256-color-picker.js'
+    type = 'text/javascript'
+  } else if (/.+\.css/.test(req.url)) {
+    file = __dirname + '/../lib/xterm256-color-picker.css'
+    type = 'text/css'
+  }
+  file = path.resolve(file)
+
+  fs.readFile(file, function(err, data) {
+    if (err) {
+      res.writeHeader(404, {'Content-Type': 'text/json'})
+      res.write(JSON.stringify(err))
+      console.error('You should never see this. Please file a bug report.')
+      console.error('Include this stacktrace: ',  err.stack())
+    } else {
+      res.writeHeader(200, {'Content-Type': type})
+      res.write(data)
+      var time = process.hrtime(start)
+      console.log(
+        'GET /'.concat(path.basename(file), ' \x1B[32m200\x1B[39m %dms'),
+        ((time[0] * 1e9 + time[1]) / 1000000).toFixed(2)
+      )
+    }
+    return res.end()
+  })
+}).listen(port)
+console.log('Listening on port: ' + port)
