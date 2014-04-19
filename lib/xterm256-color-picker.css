@@ -1,4 +1,19 @@
 .xterm256-color-picker {
-  color: blue;
-  background-color: green;
+}
+
+.xterm256-color-picker .xt256cp-selection {
+  width: 32px;
+  height: 32px;
+  border: 2px solid #444;
+  border-radius: 4px;
+  box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.4);
+  background-color: red;
+}
+
+.xt256cp-colormap-row {
+  display: inline-block;
+}
+
+body{
+  /*background-color: #1278d8;*/
 }
