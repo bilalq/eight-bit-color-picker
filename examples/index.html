@@ -28,10 +28,12 @@
       , row = document.createElement('div')
       , rowSize = 0
 
-    xtcp.colorMap.forEach(function(color) {
+    xtcp.colorMap.forEach(function(twentyFourBitColor, eightBitColor) {
       var el = document.createElement('div')
+      el.dataset.eightBitColor = eightBitColor
+      el.dataset.twentyFourBitColor = twentyFourBitColor
+      el.style.background = twentyFourBitColor
       el.style.width = el.style.height = '10px'
-      el.style.background = color
       row.appendChild(el)
       rowSize += 1
 
@@ -44,6 +46,15 @@
     })
 
     colorMapEl.appendChild(fragment)
+
+    colorMapEl.addEventListener('click', function(e) {
+      var eightBitColor = e.target.dataset.eightBitColor
+        , twentyFourBitColor = e.target.dataset.twentyFourBitColor
+
+        if (!twentyFourBitColor) { return false }
+
+        return false
+    })
 
   }).call(this)
   </script>
