@@ -11,50 +11,13 @@
 <body>
   <h1>XTerm256-Color-Picker</h1>
 
-  <div id="target" class="xterm256-color-picker">
-    <div class="xt256cp-selection">&nbsp;</div>
-  </div>
-  <div class="xt256cp-selector">
-    <div class="xt256cp-colormap"></div>
-  </div>
+  <div id="target"></div>
 
   <script type="text/javascript" src="xterm256-color-picker.js"></script>
   <script type="text/javascript">
   (function() {
 
     var xtcp = new XTerm256ColorPicker({el: 'target'})
-      , colorMapEl = document.querySelector('.xt256cp-colormap')
-      , fragment = document.createDocumentFragment()
-      , row = document.createElement('div')
-      , rowSize = 0
-
-    xtcp.colorMap.forEach(function(twentyFourBitColor, eightBitColor) {
-      var el = document.createElement('div')
-      el.dataset.eightBitColor = eightBitColor
-      el.dataset.twentyFourBitColor = twentyFourBitColor
-      el.style.background = twentyFourBitColor
-      el.style.width = el.style.height = '10px'
-      row.appendChild(el)
-      rowSize += 1
-
-      if (rowSize >= 16) {
-        row.classList.add('xt256cp-colormap-row')
-        fragment.appendChild(row)
-        row = document.createElement('div')
-        rowSize = 0
-      }
-    })
-
-    colorMapEl.appendChild(fragment)
-
-    colorMapEl.addEventListener('click', function(e) {
-      var eightBitColor = e.target.dataset.eightBitColor
-        , twentyFourBitColor = e.target.dataset.twentyFourBitColor
-
-        if (!twentyFourBitColor) { return false }
-
-        return false
-    })
 
   }).call(this)
   </script>

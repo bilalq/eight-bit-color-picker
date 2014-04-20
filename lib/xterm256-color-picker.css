@@ -1,6 +1,7 @@
 .xterm256-color-picker {
 }
 
+/* Selected color box styling */
 .xterm256-color-picker .xt256cp-selection {
   width: 32px;
   height: 32px;
@@ -10,10 +11,13 @@
   background-color: red;
 }
 
+/* Use inline-block for color picker grid */
 .xt256cp-colormap-row {
   display: inline-block;
 }
 
-body{
-  /*background-color: #1278d8;*/
+/* Dimensions of squares in picker */
+.xt256cp-colormap-row > div {
+  width: 10px;
+  height: 10px;
 }
