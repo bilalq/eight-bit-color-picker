@@ -2,13 +2,16 @@
 }
 
 /* Selected color box styling */
-.xterm256-color-picker .xt256cp-selection {
+.xterm256-color-picker .xt256cp-selection, .xt256cp-color-preview {
   width: 32px;
   height: 32px;
   border: 1px solid rgba(68, 68, 68, 0.1);
   margin-bottom: 5px;
-  /*border-radius: 4px;*/
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.4);
+}
+
+.xt256cp-colormap {
+  max-width: 164px;
 }
 
 /* Use inline-block for color picker grid */
@@ -16,10 +19,15 @@
   display: inline-block;
 }
 
-/* Dimensions of squares in picker */
+/* Squares in color picker */
 .xt256cp-colormap-row > div {
   width: 10px;
   height: 10px;
+  cursor: crosshair;
+}
+
+.xt256cp-text-container, .xt256cp-color-preview {
+  display: inline-block;
 }
 
 .xt256cp-text {
