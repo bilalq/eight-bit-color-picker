@@ -26,11 +26,25 @@
   cursor: crosshair;
 }
 
-.xt256cp-text-container, .xt256cp-color-preview {
-  display: inline-block;
+.xt256cp-color-preview {
+  position: relative;
+  top: 0;
 }
 
+.xt256cp-text-container, .xt256cp-color-preview {
+  display: inline-block;
+  /*margin: 5px;*/
+}
+
+.xt256cp-text-container {
+  min-width: 80px;
+}
+
+/* Styles for color value text */
 .xt256cp-text {
+  display: block;
   font-family: Helvetica, Arial, sans-serif;
   font-weight: 300;
+  font-size: 16px;
+  width: 70px;
 }
