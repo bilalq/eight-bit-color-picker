@@ -4,7 +4,7 @@
   "description": "UI component for picking a color from arbitrary 256 color palettes",
   "repository": {
     "type": "git",
-    "url": "https://github.com/bilalq/eight-bit-color-picker.git"
+    "url": "git://github.com/bilalq/eight-bit-color-picker.git"
   },
   "ignore": [
     "*",
