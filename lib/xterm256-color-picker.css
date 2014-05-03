@@ -14,9 +14,13 @@
 
 /* Color selection box styling */
 .xt256cp-selector {
+
+  /* Prevent highlight on drag */
   -webkit-user-select: none;
   -moz-user-select: none;
   user-select: none;
+
+  /* Positioning and styling */
   position: absolute;
   box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.4);
   padding: 20px;
@@ -24,7 +28,20 @@
   height: 164px;
   background-color: #444;
   overflow: hidden;
-  display: none;
+
+  /* Fade in/out rules */
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: all 0.2s ease-in-out 0s;
+  -moz-transition: all 0.2s ease-in-out 0s;
+  -ms-transition: all 0.2s ease-in-out 0s;
+  transition: all 0.2s ease-in-out 0s;
+}
+
+/* Class that is added to visible selectionUIs */
+.xt256cp-shown-selector {
+  opacity: 1;
+  visibility: visible;
 }
 
 /* Have color map and preview values display inline */
