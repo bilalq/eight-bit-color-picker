@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <title>Eight Bit Color Picker by bilalq</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="inner">
+        <h1>Eight Bit Color Picker</h1>
+        <h2>Color Picker for 256 color palettes</h2>
+        <a href="https://github.com/bilalq/eight-bit-color-picker" class="button"><small>View project on</small>GitHub</a>
+      </div>
+    </header>
+
+    <div id="content-wrapper">
+      <div class="inner clearfix">
+        <section id="main-content">
+          <h1>
+<a name="eight-bit-color-picker" class="anchor" href="#eight-bit-color-picker"><span class="octicon octicon-link"></span></a>Eight Bit Color Picker</h1>
+
+<blockquote>
+<p>UI component for picking a color from arbitrary 256 color palettes</p>
+</blockquote>
+
+<p>This is a simple, flexible color-picker widget. It has no dependencies (not
+even on Jquery), so it's easy to just plug in and use. It weighs 2.2kb for JS
+&amp; 518 bytes for CSS once minified and gzipped.</p>
+
+<p>If you're using an AMD loader, this will register as an AMD module. If not,
+it'll expose a global called <code>EightBitColorPicker</code>.</p>
+
+<h2>
+<a name="installation" class="anchor" href="#installation"><span class="octicon octicon-link"></span></a>Installation</h2>
+
+<p>You can of course go through the old-school copy/pasta routine, but here's the
+command to pull this in using Bower:</p>
+
+<pre><code>bower install --save eight-bit-color-picker
+</code></pre>
+
+<h2>
+<a name="quick-start" class="anchor" href="#quick-start"><span class="octicon octicon-link"></span></a>Quick Start</h2>
+
+<p>You can pass in either a string of an element ID or a reference to a DOM
+element into the constructor of <code>EightBitColorPicker</code> like so:</p>
+
+<div class="highlight highlight-html"><pre><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"target"</span><span class="nt">&gt;&lt;/div&gt;</span>
+</pre></div>
+
+<div class="highlight highlight-javascript"><pre><span class="c1">// You can do this</span>
+<span class="kd">var</span> <span class="nx">ebcp</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">EightBitColorPicker</span><span class="p">({</span> <span class="nx">el</span><span class="o">:</span> <span class="s1">'target'</span> <span class="p">})</span>
+
+<span class="c1">// Or this</span>
+<span class="kd">var</span> <span class="nx">el</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'target'</span><span class="p">)</span>
+<span class="kd">var</span> <span class="nx">ebcp</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">EightBitColorPicker</span><span class="p">({</span> <span class="nx">el</span><span class="o">:</span> <span class="nx">el</span> <span class="p">})</span>
+</pre></div>
+
+<p>Alternatively, you can just run the <code>detect</code> function to instantiate all color
+pickers.</p>
+
+<div class="highlight highlight-javascript"><pre><span class="c1">// Renders all color pickers</span>
+<span class="nx">EightBitColorPicker</span><span class="p">.</span><span class="nx">detect</span><span class="p">()</span>
+</pre></div>
+
+<h2>
+<a name="api" class="anchor" href="#api"><span class="octicon octicon-link"></span></a>API</h2>
+
+<hr><p><code>EightBitColorPicker</code> constructor</p>
+
+<p>The constructor takes in an object with the following properties:</p>
+
+<ul>
+<li>
+<code>el</code>: Either a string of an element ID or a DOMElement object <em>(required)</em>
+</li>
+<li>
+<code>colorMap</code>: An array of 256 strings in full hex format (e.g: <code>#ffffff</code>)</li>
+<li>
+<code>color</code>: Initial color to set picker instance at (valid values are between 0-255)</li>
+</ul><p>If no <code>colorMap</code> is specified, a default palette is used. If color is not
+specified in the argument, it will first check if the targeted element has a
+<code>data-color</code> attribute and use that if so. Otherwise, a random color from the
+palette will be chosen.</p>
+
+<hr><p><code>EightBitColorPicker.detect</code></p>
+
+<p>This function finds all color pickers in the DOM, renders them, and returns a
+list of picker instances. Note that this function is not on the prototype chain,
+and can be invoked statically like so:</p>
+
+<div class="highlight highlight-javascript"><pre><span class="kd">var</span> <span class="nx">pickers</span> <span class="o">=</span> <span class="nx">EightBitColorPicker</span><span class="p">.</span><span class="nx">detect</span><span class="p">()</span>
+</pre></div>
+
+<hr><p><code>EightBitColorPicker.prototype.get8bitColor</code></p>
+
+<p>Returns an integer from 0-255 that corresponds with the 8bit color index
+currently in display by the picker.</p>
+
+<hr><p><code>EightBitColorPicker.prototype.getHexColor</code></p>
+
+<p>Returns the currently selected color of the picker instance as a string in
+full hex format with a leading "#".</p>
+
+<hr><p><code>EightBitColorPicker.prototype.getRGBColor</code></p>
+
+<p>Returns the current color as an object with keys "r", "g", and "b". Values are
+integers from 0 to 255.</p>
+
+<hr><p><code>EightBitColorPicker.prototype.getForegroundEscapeSequence</code></p>
+
+<p>Returns the terminal escape code sequence to use the current color as a
+foreground color.</p>
+
+<hr><p><code>EightBitColorPicker.prototype.getBackgroundEscapeSequence</code></p>
+
+<p>Returns the terminal escape code sequence to use the current color as a
+background color.</p>
+
+<hr><p><code>EightBitColorPicker.prototype.show</code></p>
+
+<p>Displays the color picker selection view</p>
+
+<hr><p><code>EightBitColorPicker.prototype.hide</code></p>
+
+<p>Hides the color picker selection view</p>
+
+<hr><p><code>EightBitColorPicker.prototype.updateColor</code></p>
+
+<p>Updates the value of <code>this.color</code> and its representations. This takes two
+arguments:</p>
+
+<ul>
+<li>
+<code>color</code>: The color from 0-255 to use</li>
+<li>
+<code>previewOnly</code>: [optional] Only updates preview representation if truthy and
+leaves <code>this.color</code> alone</li>
+</ul><hr><p><code>EightBitColorPicker.prototype.restoreColor</code></p>
+
+<p>Restores preview color representations to match the value of <code>this.color</code>.</p>
+
+<hr><h2>
+<a name="browser-requirements" class="anchor" href="#browser-requirements"><span class="octicon octicon-link"></span></a>Browser Requirements</h2>
+
+<p>This will work in all modern browsers. If you're worried about IE, this should
+work fine on IE10 and up.</p>
+
+<h2>
+<a name="license" class="anchor" href="#license"><span class="octicon octicon-link"></span></a>License</h2>
+
+<p><a href="https://github.com/bilalq/eight-bit-color-picker/blob/master/LICENSE">MIT</a></p>
+        </section>
+
+        <aside id="sidebar">
+          <a href="https://github.com/bilalq/eight-bit-color-picker/zipball/master" class="button">
+            <small>Download</small>
+            .zip file
+          </a>
+          <a href="https://github.com/bilalq/eight-bit-color-picker/tarball/master" class="button">
+            <small>Download</small>
+            .tar.gz file
+          </a>
+
+          <p class="repo-owner"><a href="https://github.com/bilalq/eight-bit-color-picker"></a> is maintained by <a href="https://github.com/bilalq">bilalq</a>.</p>
+
+          <p>This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
+        </aside>
+      </div>
+    </div>
+
+  
+  </body>
+</html>
