@@ -46,6 +46,8 @@ EightBitColorPicker.detect()
 API
 ---
 
+---
+
 `EightBitColorPicker` constructor
 
 The constructor takes in an object with the following properties:
@@ -62,6 +64,7 @@ palette will be chosen.
 ---
 
 `EightBitColorPicker.detect`
+
 This function finds all color pickers in the DOM, renders them, and returns a
 list of picker instances. Note that this function is not on the prototype chain,
 and can be invoked statically like so:
@@ -133,6 +136,8 @@ arguments:
 `EightBitColorPicker.prototype.restoreColor`
 
 Restores preview color representations to match the value of `this.color`.
+
+---
 
 Browser Requirements
 --------------------
