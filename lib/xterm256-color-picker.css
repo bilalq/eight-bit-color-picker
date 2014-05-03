@@ -1,4 +1,6 @@
-.xterm256-color-picker:after {
+/* Restrict width of color picker */
+.xterm256-color-picker {
+  max-width: 34px;
 }
 
 /* Selected color box styling */
@@ -12,6 +14,9 @@
 
 /* Color selection box styling */
 .xt256cp-selector {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
   position: absolute;
   box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.4);
   padding: 20px;
@@ -22,6 +27,7 @@
   display: none;
 }
 
+/* Have color map and preview values display inline */
 .xt256cp-selector .xt256cp-colormap, .xt256cp-selector .xt256cp-preview-values{
   display: inline-block;
 }
