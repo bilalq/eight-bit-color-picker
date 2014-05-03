@@ -48,10 +48,10 @@ http.createServer(function(req, res) {
   var file = __dirname + '/index.html'
     , type = 'text/html'
   if (/.+\.js/.test(req.url)) {
-    file = __dirname + '/../dist/eight-bit-color-picker.min.js'
+    file = __dirname + '/../lib/eight-bit-color-picker.js'
     type = 'text/javascript'
   } else if (/.+\.css/.test(req.url)) {
-    file = __dirname + '/../dist/eight-bit-color-picker.min.css'
+    file = __dirname + '/../lib/eight-bit-color-picker.css'
     type = 'text/css'
   }
   file = path.resolve(file)
@@ -68,7 +68,7 @@ http.createServer(function(req, res) {
       res.writeHeader(404, {'Content-Type': 'text/json'})
       res.write(JSON.stringify(err))
       console.error('You should never see this. Please file a bug report.')
-      console.error('Include this stacktrace: ',  err.stack())
+      console.error('Include this stacktrace: ',  err.stack)
       return res.end()
     }
 
