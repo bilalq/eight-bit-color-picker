@@ -1,10 +1,10 @@
 /* Restrict width of color picker */
-.eightbit-color-picker {
+.eight-bit-color-picker {
   max-width: 34px;
 }
 
 /* Selected color box styling */
-.eightbit-color-picker .ebcp-selection, .ebcp-color-preview {
+.eight-bit-color-picker .ebcp-selection, .ebcp-color-preview {
   width: 32px;
   height: 32px;
   border: 1px solid black;
