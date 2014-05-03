@@ -42,16 +42,16 @@ http.createServer(function(req, res) {
 
   /**
    * Decide which file to serve based on req.url. Any requests for js or css
-   * assets will route to lib/xterm256-color-picker.{js|css} for the sake of
+   * assets will route to lib/eightbit-color-picker.{js|css} for the sake of
    * simplicity.
    */
   var file = __dirname + '/index.html'
     , type = 'text/html'
   if (/.+\.js/.test(req.url)) {
-    file = __dirname + '/../lib/xterm256-color-picker.js'
+    file = __dirname + '/../lib/eightbit-color-picker.js'
     type = 'text/javascript'
   } else if (/.+\.css/.test(req.url)) {
-    file = __dirname + '/../lib/xterm256-color-picker.css'
+    file = __dirname + '/../lib/eightbit-color-picker.css'
     type = 'text/css'
   }
   file = path.resolve(file)
