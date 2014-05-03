@@ -146,4 +146,4 @@ work fine on IE10 and up.
 
 License
 -------
-[MIT][https://github.com/bilalq/eight-bit-color-picker/blob/master/LICENSE]
+[MIT](https://github.com/bilalq/eight-bit-color-picker/blob/master/LICENSE)
