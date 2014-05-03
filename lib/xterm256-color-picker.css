@@ -1,17 +1,41 @@
-.xterm256-color-picker {
+.xterm256-color-picker:after {
 }
 
 /* Selected color box styling */
 .xterm256-color-picker .xt256cp-selection, .xt256cp-color-preview {
   width: 32px;
   height: 32px;
-  border: 1px solid rgba(68, 68, 68, 0.1);
+  border: 1px solid black;
   margin-bottom: 5px;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.4);
 }
 
+/* Color selection box styling */
+.xt256cp-selector {
+  position: absolute;
+  box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.4);
+  padding: 20px;
+  width: 300px;
+  height: 164px;
+  background-color: #444;
+  overflow: hidden;
+  display: none;
+}
+
+.xt256cp-selector .xt256cp-colormap, .xt256cp-selector .xt256cp-preview-values{
+  display: inline-block;
+}
+
+/* Define size of colormap */
 .xt256cp-colormap {
   max-width: 164px;
+}
+
+/* Fix positioning of preview values */
+.xt256cp-selector .xt256cp-preview-values {
+  position: relative;
+  bottom: 50px;
+  margin-left: 20px;
 }
 
 /* Use inline-block for color picker grid */
@@ -26,18 +50,20 @@
   cursor: crosshair;
 }
 
+/* Fix alignment of color preview box */
 .xt256cp-color-preview {
   position: relative;
-  top: 0;
+  top: -20px;
 }
 
+/* Make text inputs and color preview display inline */
 .xt256cp-text-container, .xt256cp-color-preview {
   display: inline-block;
-  /*margin: 5px;*/
 }
 
+/* Set width of text inputs so they are consistent */
 .xt256cp-text-container {
-  min-width: 80px;
+  width: 80px;
 }
 
 /* Styles for color value text */
