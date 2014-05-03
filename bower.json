@@ -8,7 +8,7 @@
   },
   "ignore": [
     "*",
-    "!lib/**/*"
+    "!lib/**/*",
     "!dist/**/*",
     "!LICENSE",
     "!README.md"
