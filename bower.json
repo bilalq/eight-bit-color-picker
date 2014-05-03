@@ -9,7 +9,9 @@
   "ignore": [
     "*",
     "!lib/**/*"
-    "!dist/**/*"
+    "!dist/**/*",
+    "!LICENSE",
+    "!README.md"
   ],
   "keywords": [
     "8bit",
