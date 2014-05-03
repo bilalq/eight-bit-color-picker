@@ -1,0 +1,29 @@
+{
+  "name": "eight-bit-color-picker",
+  "version": "0.1.0",
+  "description": "UI component for picking a color from xterm's 256 color palette",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bilalq/eight-bit-color-picker.git"
+  },
+  "keywords": [
+    "8bit",
+    "eight",
+    "bit",
+    "256",
+    "color",
+    "xterm",
+    "terminal",
+    "picker",
+    "chooser"
+  ],
+  "scripts": {
+    "uglifyjs": "mkdir -p dist && node_modules/.bin/uglifyjs lib/eight-bit-color-picker.js --screw-ie8 --mangle --reserved \"define,EightBitColorPicker\" --compress --comments -o dist/eight-bit-color-picker.min.js",
+    "uglifycss": "node_modules/.bin/uglifycss lib/eight-bit-color-picker.css > dist/eight-bit-color-picker.min.css",
+    "build": "npm run uglifyjs && npm run uglifycss"
+  },
+  "devDependencies": {
+    "uglify-js": "^2.4.13",
+    "uglifycss": "0.0.8"
+  }
+}

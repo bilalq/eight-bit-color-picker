@@ -48,10 +48,10 @@ http.createServer(function(req, res) {
   var file = __dirname + '/index.html'
     , type = 'text/html'
   if (/.+\.js/.test(req.url)) {
-    file = __dirname + '/../lib/eight-bit-color-picker.js'
+    file = __dirname + '/../dist/eight-bit-color-picker.min.js'
     type = 'text/javascript'
   } else if (/.+\.css/.test(req.url)) {
-    file = __dirname + '/../lib/eight-bit-color-picker.css'
+    file = __dirname + '/../dist/eight-bit-color-picker.min.css'
     type = 'text/css'
   }
   file = path.resolve(file)

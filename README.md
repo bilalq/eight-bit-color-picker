@@ -1,15 +1,10 @@
-*Note: This is a WIP*
+Eight Bit Color Picker
+======================
 
-xterm256-color-picker
-=====================
+> UI component for picking a color from arbitrary 256 color palettes
 
-> UI component for picking a color from xterm's 256 color palette
-
-Aside from providing a color picker UI element, this library also supports
-custom color maps.
 
 Browser Requirements
 --------------------
-Because `element.classList` is used, at least IE10 is required. All modern
-browsers handle this just fine. Polyfills can be used to bring in support for
-older browsers.
+This will work in all modern browsers. If you're worried about IE, this should
+work fine on IE10 and up.
