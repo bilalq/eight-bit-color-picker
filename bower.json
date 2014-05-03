@@ -1,7 +1,7 @@
 {
   "name": "eight-bit-color-picker",
   "version": "0.1.0",
-  "description": "UI component for picking a color from xterm's 256 color palette",
+  "description": "UI component for picking a color from arbitrary 256 color palettes",
   "repository": {
     "type": "git",
     "url": "https://github.com/bilalq/eight-bit-color-picker.git"
