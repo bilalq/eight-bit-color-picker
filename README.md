@@ -35,8 +35,13 @@ var el = document.getElementById('target')
 var ebcp = new EightBitColorPicker({ el: el })
 ```
 
-Alternatively, you can just run the `detect` function to instantiate all color
-pickers.
+Alternatively, you can just run the `detect` function to find all elements with
+the class `eight-bit-color-picker` and instantiate them as pickers.
+
+```html
+<div class="eight-bit-color-picker"></div>
+<div class="eight-bit-color-picker"></div>
+```
 
 ```javascript
 // Renders all color pickers
@@ -65,9 +70,9 @@ palette will be chosen.
 
 `EightBitColorPicker.detect`
 
-This function finds all color pickers in the DOM, renders them, and returns a
-list of picker instances. Note that this function is not on the prototype chain,
-and can be invoked statically like so:
+This function finds all elements with the class `eight-bit-color-picker`,
+renders them as pickers, and returns a list of picker instances. Note that this
+function is not on the prototype chain, and can be invoked statically like so:
 
 ```javascript
 var pickers = EightBitColorPicker.detect()
