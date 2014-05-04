@@ -18,7 +18,7 @@
     "chooser"
   ],
   "scripts": {
-    "uglifyjs": "mkdir -p dist && node_modules/.bin/uglifyjs lib/eight-bit-color-picker.js --screw-ie8 --mangle --reserved \"define,EightBitColorPicker\" --compress --comments -o dist/eight-bit-color-picker.min.js",
+    "uglifyjs": "mkdir -p dist && node_modules/.bin/uglifyjs lib/eight-bit-color-picker.js --screw-ie8 --mangle --reserved \"define,module,EightBitColorPicker\" --compress --comments -o dist/eight-bit-color-picker.min.js",
     "uglifycss": "node_modules/.bin/uglifycss lib/eight-bit-color-picker.css > dist/eight-bit-color-picker.min.css",
     "build": "npm run uglifyjs && npm run uglifycss"
   },
