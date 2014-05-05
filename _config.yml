@@ -2,3 +2,4 @@ name: Eight Bit Color Picker
 markdown: redcarpet
 pygments: true
 baseurl: /eight-bit-color-picker
+exclude: [node_modules]

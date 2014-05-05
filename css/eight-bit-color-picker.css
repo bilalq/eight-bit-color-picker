@@ -1,0 +1,99 @@
+/* Restrict width of color picker */
+.eight-bit-color-picker {
+  max-width: 34px;
+}
+
+/* Selected color box styling */
+.eight-bit-color-picker .ebcp-selection, .ebcp-color-preview {
+  width: 32px;
+  height: 32px;
+  border: 1px solid black;
+  margin-bottom: 5px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.4);
+}
+
+/* Color selection box styling */
+.ebcp-selector {
+
+  /* Prevent highlight on drag */
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+
+  /* Positioning and styling */
+  position: absolute;
+  box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.4);
+  padding: 20px;
+  width: 300px;
+  height: 164px;
+  background-color: #444;
+  overflow: hidden;
+
+  /* Fade in/out rules */
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: all 0.2s ease-in-out 0s;
+  -moz-transition: all 0.2s ease-in-out 0s;
+  -ms-transition: all 0.2s ease-in-out 0s;
+  transition: all 0.2s ease-in-out 0s;
+}
+
+/* Class that is added to visible selectionUIs */
+.ebcp-shown-selector {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Have color map and preview values display inline */
+.ebcp-selector .ebcp-colormap, .ebcp-selector .ebcp-preview-values{
+  display: inline-block;
+}
+
+/* Define size of colormap */
+.ebcp-colormap {
+  max-width: 164px;
+}
+
+/* Fix positioning of preview values */
+.ebcp-selector .ebcp-preview-values {
+  position: relative;
+  bottom: 50px;
+  margin-left: 20px;
+}
+
+/* Use inline-block for color picker grid */
+.ebcp-colormap-row {
+  display: inline-block;
+}
+
+/* Squares in color picker */
+.ebcp-colormap-row > div {
+  width: 10px;
+  height: 10px;
+  cursor: crosshair;
+}
+
+/* Fix alignment of color preview box */
+.ebcp-color-preview {
+  position: relative;
+  top: -20px;
+}
+
+/* Make text inputs and color preview display inline */
+.ebcp-text-container, .ebcp-color-preview {
+  display: inline-block;
+}
+
+/* Set width of text inputs so they are consistent */
+.ebcp-text-container {
+  width: 80px;
+}
+
+/* Styles for color value text */
+.ebcp-text {
+  display: block;
+  font-family: Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  width: 70px;
+}
