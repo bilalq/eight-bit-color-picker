@@ -98,3 +98,9 @@ arguments:
 Restores preview color representations to match the value of `this.color`.
 
 ---
+
+Browser Requirements
+--------------------
+This will work in all modern browsers. If you're worried about IE, this should
+work fine on IE10 and up.
+

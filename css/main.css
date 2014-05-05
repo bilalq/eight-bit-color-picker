@@ -2,6 +2,10 @@ p, blockquote, h1, h2, div {
   font-weight: 100;
 }
 
+p {
+  line-height: 1.5em;
+}
+
 body {
   max-width: 720px;
   margin: auto;
@@ -74,4 +78,24 @@ blockquote {
 
 .button-xlarge {
   font-size: 125%;
+}
+
+.footer {
+  text-align: center;
+  margin-top: 100px;
+  margin-bottom: 40px;
+  font-size: 0.9em;
+}
+
+.demo {
+  margin-top: 20px;
+  line-height: 2em;
+}
+.demo .eight-bit-color-picker {
+  margin-left: 10px;
+  display: inline-block;
+}
+
+.ebcp-text {
+  font-family: Menlo, monospace;
 }

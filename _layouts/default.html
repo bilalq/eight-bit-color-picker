@@ -4,19 +4,19 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title>{{ page.title }}</title>
-    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.4.2/pure-min.css">
+    <link rel="stylesheet" href="{{ site.baseurl }}/css/pure-min.css">
     <link rel="stylesheet" href="{{ site.baseurl }}/css/syntax.css">
     <link rel="stylesheet" href="{{ site.baseurl }}/css/eight-bit-color-picker.css">
     <link rel="stylesheet" href="{{ site.baseurl }}/css/main.css">
   </head>
   <body>
-    <a href="https://github.com/bilalq/eight-bit-color-picker"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/e7bbb0521b397edbd5fe43e7f760759336b5e05f/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677265656e5f3030373230302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_green_007200.png"></a>
+    {% comment %}<a href="https://github.com/bilalq/eight-bit-color-picker"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/e7bbb0521b397edbd5fe43e7f760759336b5e05f/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677265656e5f3030373230302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_green_007200.png"></a>{% endcomment %}
     <div class="pure-g-r">
       <div class="pure-u-1">
         <div class="header">
-          <h1 class="title"><a href="{{ site.baseurl }}">{{ site.name }}</a></h1>
+          <h1 class="title"><a href="{{ site.baseurl }}/">{{ site.name }}</a></h1>
         </div>
       </div>
       <div class="pure-u-1 nav-buttons">
@@ -27,9 +27,58 @@
         {{ content }}
       </div>
     </div>
+    <div class="footer">
+      Created by <a href="http://bilalquadri.com/">Bilal Quadri</a> &amp; released under the <a href="https://github.com/bilalq/eight-bit-color-picker/blob/master/LICENSE">MIT license</a>
+    </div>
     <script type="text/javascript" src="{{ site.baseurl }}/js/eight-bit-color-picker.js"></script>
     <script type="text/javascript">
-      EightBitColorPicker.detect()
+      var blueMap = [
+        "#838b8b","#7a8b8b","#c1cdcd","#668b8b","#b4cdcd","#2f4f4f","#2f4f4f",
+        "#5f9f9f","#c0d9d9","#528b8b","#e0eeee","#96cdcd","#388e8e","#79cdcd",
+        "#d1eeee","#8fd8d8","#66cccc","#adeaea","#70dbdb","#aeeeee","#afeeee",
+        "#8deeee","#37fdfc","#008080","#008b8b","#00cdcd","#00eeee","#00ffff",
+        "#00ffff","#97ffff","#bbffff","#e0ffff","#f0ffff","#00ced1","#5f9ea0",
+        "#00868b","#00c5cd","#00e5ee","#00f5ff","#67e6ec","#4a777a","#05edff",
+        "#53868b","#73b1b7","#05e9ff","#7ac5cd","#8ee5ee","#05b8cc","#98f5ff",
+        "#b0e0e6","#c1f0f6","#39b7cd","#65909a","#0ebfe9","#c3e4ed","#68838b",
+        "#63d1f4","#9ac0cd","#50a6c2","#add8e6","#b2dfee","#00688b","#0099cc",
+        "#009acd","#00b2ee","#00bfff","#bfefff","#33a1c9","#507786","#87ceeb",
+        "#38b0de","#0bb5ff","#42c0fb","#6996ad","#539dc2","#236b8e","#3299cc",
+        "#0198e1","#33a1de","#607b8b","#35586c","#5d92b1","#8db6cd","#325c74",
+        "#a4d3ee","#82cffd","#67c8ff","#b0e2ff","#87cefa","#6ca6cd","#4a708b",
+        "#9bc4e2","#7ec0ee","#87ceff","#517693","#5d7b93","#42647f","#4682b4",
+        "#4f94cd","#5cacee","#63b8ff","#525c65","#36648b","#62b1f6","#74bbfb",
+        "#f0f8ff","#4e78a0","#0d4f8b","#708090","#708090","#778899","#778899",
+        "#6183a6","#9fb6cd","#7d9ec0","#104e8b","#1874cd","#1c86ee","#60affe",
+        "#007fff","#1e90ff","#6c7b8b","#b7c3d0","#739ac5","#75a1d0","#b9d3ee",
+        "#499df5","#c6e2ff","#3b6aa0","#7aa9dd","#0276fd","#003f87","#6e7b8b",
+        "#506987","#a2b5cd","#4372aa","#26466d","#1d7cf2","#687c97","#344152",
+        "#50729f","#4973ab","#b0c4de","#3063a5","#bcd2ee","#7eb6ff","#cae1ff",
+        "#4d71a3","#2b4f81","#4981ce","#88ace0","#5993e5","#3a66a7","#3579dc",
+        "#5190ed","#42526c","#4d6fac","#2c5197","#6495ed","#6d9bf1","#5b90f6",
+        "#1464f4","#3a5894","#7093db","#1b3f8b","#5971ad","#0147fa","#3d59ab",
+        "#27408b","#3a5fcd","#4169e1","#436eee","#003eff","#4876ff","#a9acb6",
+        "#22316c","#162252","#3b4990","#283a90","#6f7285","#838ede","#e6e8fa",
+        "#7d7f94","#2e37fe","#2f2f4f","#42426f","#8f8fbc","#5959ab","#7171c6",
+        "#d9d9f3","#23238e","#3232cc","#3232cd","#191970","#e6e6fa","#000033",
+        "#000080","#00008b","#00009c","#0000cd","#0000ee","#0000ff","#3333ff",
+        "#4d4dff","#6666ff","#aaaaff","#ccccff","#f8f8ff","#5b59ba","#120a8f",
+        "#302b54","#483d8b","#473c8b","#3b3178","#6a5acd","#6959cd","#7a67ee",
+        "#8470ff","#836fff","#7b68ee","#3300ff","#5d478b","#9f79ee","#8968cd",
+        "#9370db","#ab82ff","#6600ff","#380474","#838b8b","#7a8b8b","#c1cdcd",
+        "#668b8b","#b4cdcd","#2f4f4f","#2f4f4f","#5f9f9f","#c0d9d9","#528b8b",
+        "#e0eeee","#96cdcd","#388e8e","#79cdcd","#d1eeee","#8fd8d8","#66cccc",
+        "#adeaea","#70dbdb","#aeeeee","#afeeee","#8deeee","#37fdfc","#008080",
+        "#008b8b","#00cdcd","#00eeee","#00ffff"
+      ]
+      var pickers = document.getElementsByClassName('eight-bit-color-picker')
+      Array.prototype.forEach.call(pickers, function(picker) {
+        if (picker.classList.contains('blue-palette')) {
+          new EightBitColorPicker({el: picker, colorMap: blueMap})
+        } else {
+          new EightBitColorPicker({el: picker})
+        }
+      })
     </script>
   </body>
 </html>
