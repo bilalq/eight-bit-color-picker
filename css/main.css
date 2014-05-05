@@ -10,7 +10,7 @@ body {
   max-width: 720px;
   margin: auto;
   background-color: #222;
-  color: #fff;
+  color: #bcbcbc;
 }
 
 .header {
@@ -20,6 +20,7 @@ body {
 
 h1, h2 {
   font-family: Helvetica, Arial, sans-serif;
+  color: #fff;
   font-weight: 100;
 }
 
@@ -42,12 +43,9 @@ a.pure-button:hover {
   box-shadow: 0 1px 1px #111;
 }
 
-.code {
-}
-
 .showcase {
   margin: auto;
-  width: 228px;
+  width: 230px;
 }
 
 .showcase .eight-bit-color-picker {
@@ -61,6 +59,7 @@ blockquote {
   font-style: italic;
   text-align: center;
   margin-bottom: 50px;
+  color: #fff;
 }
 
 .title {
@@ -94,8 +93,4 @@ blockquote {
 .demo .eight-bit-color-picker {
   margin-left: 10px;
   display: inline-block;
-}
-
-.ebcp-text {
-  font-family: Menlo, monospace;
 }
