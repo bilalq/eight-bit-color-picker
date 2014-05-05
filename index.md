@@ -13,19 +13,27 @@ title: Eight Bit Color Picker
 > A UI component for picking a color from arbitrary 256 color palettes
 
 This is a simple, flexible color-picker widget. It has no dependencies (not
-even on Jquery), so it's easy to just plug in and use. It weighs 2.2kb for JS
+even on jQuery), so it's easy to just plug in and use. It weighs 2.2kb for JS
 & 518 bytes for CSS once minified and gzipped.
 
-If you're using an AMD loader, this will register as an AMD module. If not,
-it'll expose a global called `EightBitColorPicker`.
+This exposes itself via the
+[UMD](https://github.com/umdjs/umd/blob/master/returnExports.js) exports format,
+so it should comply with whatever module loading system you're using. If you're
+not using one, it will expose a global called `EightBitColorPicker`.
 
 Install
 -------
 You can of course go through the old-school copy/pasta routine, but here's the
-command to pull this in using Bower:
+incantation to pull this in using Bower:
 
 ```sh
 bower install --save eight-bit-color-picker
+```
+
+And for those that prefer component:
+
+```sh
+component install bilalq/eight-bit-color-picker
 ```
 
 Use
