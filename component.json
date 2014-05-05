@@ -1,0 +1,20 @@
+{
+  "name": "eight-bit-color-picker",
+  "repo": "bilalq/eight-bit-color-picker",
+  "version": "0.2.0",
+  "description": "UI component for picking a color from arbitrary 256 color palettes",
+  "keywords": [
+    "8bit",
+    "eight",
+    "bit",
+    "256",
+    "color",
+    "xterm",
+    "terminal",
+    "picker",
+    "chooser"
+  ],
+  "license": "MIT",
+  "scripts": ["lib/eight-bit-color-picker.js"],
+  "styles": ["lib/eight-bit-color-picker.css"]
+}
