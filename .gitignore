@@ -2,3 +2,4 @@
 .tern-project
 node_modules
 _site
+build
