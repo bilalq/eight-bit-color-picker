@@ -48,6 +48,49 @@ var pickers = EightBitColorPicker.detect()
 
 ---
 
+Events
+------
+
+You can set up listeners for events emitted by a color picker instance. Currently,
+only the `colorChange` event is emitted.
+
+---
+
+`colorChange` event
+
+This event is triggered when the selected color of a color picker changes. The
+`detail` property of the event contains these values:
+
+* `oldColor`: The selected color before the change occurred
+* `newColor`: The updated value of the color
+* `picker`: A reference to the picker object
+
+---
+
+`EightBitColorPicker.prototype.addEventListener`
+
+Acts as a proxy to the `addEventListener` function of the picker's DOMElement
+
+```javascript
+picker.addEventListener('colorChange', function(e) {
+  console.log('Old Color: ' + e.detail.oldColor)
+  console.log('New Color: ' + e.detail.newColor)
+  console.log('Hex Color: ' + e.detail.picker.getHexColor())
+})
+```
+
+---
+
+`EightBitColorPicker.prototype.removeEventListener`
+
+Acts as a proxy to the `removeEventListener` function of the picker's DOMElement
+
+```javascript
+picker.removeEventListener('colorChange', someFunc)
+```
+
+---
+
 Getters
 -------
 
@@ -170,5 +213,5 @@ picker.restoreColor()
 Browser Requirements
 --------------------
 This will work in all modern browsers. If you're worried about IE, this should
-work fine on IE10 and up.
-
+work fine on IE10 and up. As for mobile... it works, but the experience isn't
+quite ideal.
