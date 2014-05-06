@@ -94,3 +94,21 @@ blockquote {
   margin-left: 10px;
   display: inline-block;
 }
+
+code {
+  color: #dfdfdf;
+}
+
+p {
+  margin-top: 20px;
+}
+
+hr {
+  border-color: #333;
+}
+
+@media screen and (min-width: 720px) {
+  .highlight .c1 {
+    float: right;
+  }
+}
