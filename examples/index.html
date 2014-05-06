@@ -19,6 +19,10 @@
   <script type="text/javascript">
   (function() {
     var ebcp = new EightBitColorPicker({el: 'target'})
+    window.ebcp = ebcp
+    ebcp.addEventListener('colorChange', function(e) {
+      console.log(e.detail)
+    })
   }).call(this)
   </script>
 </body>
