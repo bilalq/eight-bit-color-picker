@@ -13,12 +13,12 @@ title: Eight Bit Color Picker
 > A UI component for picking a color from arbitrary 256 color palettes
 
 This is a simple, flexible color-picker widget. It has no dependencies (not
-even on jQuery), so it's easy to just plug in and use. It weighs 2.2kb for JS
-& 518 bytes for CSS once minified and gzipped.
+even on jQuery), so it's easy to just plug in and use. It weighs less than 3kb
+of combined JS & CSS once minified and gzipped.
 
-This exposes itself via the
+Since it exposes itself via the
 [UMD](https://github.com/umdjs/umd/blob/master/returnExports.js) exports format,
-so it should comply with whatever module loading system you're using. If you're
+it will comply with whatever module loading system you're using. If you're
 not using one, it will expose a global called `EightBitColorPicker`.
 
 Install
