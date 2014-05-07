@@ -3,19 +3,31 @@ Eight Bit Color Picker
 
 > UI component for picking a color from arbitrary 256 color palettes
 
+<img alt="Screenshot of color picker" src="http://i.imgur.com/djg6mOs.png?1" width="430" height="291">
+
 This is a simple, flexible color-picker widget. It has no dependencies (not
-even on Jquery), so it's easy to just plug in and use. It weighs 2.2kb for JS
-& 518 bytes for CSS once minified and gzipped.
+even on jQuery), so it's easy to just plug in and use. It weighs less than 3kb
+of combined JS & CSS once minified and gzipped.
 
-If you're using an AMD loader, this will register as an AMD module. If not,
-it'll expose a global called `EightBitColorPicker`.
+Since it exposes itself via the
+[UMD](https://github.com/umdjs/umd/blob/master/returnExports.js) exports format,
+it will comply with whatever module loading system you're using. If you're
+not using one, it will expose a global called `EightBitColorPicker`.
 
-Installation
-------------
+Install
+-------
 You can of course go through the old-school copy/pasta routine, but here's the
-command to pull this in using Bower:
+incantation to pull this in using Bower:
 
-    bower install --save eight-bit-color-picker
+```sh
+bower install --save eight-bit-color-picker
+```
+
+And for those that prefer component:
+
+```sh
+component install bilalq/eight-bit-color-picker
+```
 
 Quick Start
 -----------
@@ -45,104 +57,12 @@ the class `eight-bit-color-picker` and instantiate them as pickers.
 
 ```javascript
 // Renders all color pickers
-EightBitColorPicker.detect()
-```
-
-API
----
-
----
-
-`EightBitColorPicker` constructor
-
-The constructor takes in an object with the following properties:
-
-* `el`: Either a string of an element ID or a DOMElement object *(required)*
-* `colorMap`: An array of 256 strings in full hex format (e.g: `#ffffff`)
-* `color`: Initial color to set picker instance at (valid values are between 0-255)
-
-If no `colorMap` is specified, a default palette is used. If color is not
-specified in the argument, it will first check if the targeted element has a
-`data-color` attribute and use that if so. Otherwise, a random color from the
-palette will be chosen.
-
----
-
-`EightBitColorPicker.detect`
-
-This function finds all elements with the class `eight-bit-color-picker`,
-renders them as pickers, and returns a list of picker instances. Note that this
-function is not on the prototype chain, and can be invoked statically like so:
-
-```javascript
 var pickers = EightBitColorPicker.detect()
 ```
 
----
-
-`EightBitColorPicker.prototype.get8bitColor`
-
-Returns an integer from 0-255 that corresponds with the 8bit color index
-currently in display by the picker.
-
----
-
-`EightBitColorPicker.prototype.getHexColor`
-
-Returns the currently selected color of the picker instance as a string in
-full hex format with a leading "#".
-
----
-
-`EightBitColorPicker.prototype.getRGBColor`
-
-Returns the current color as an object with keys "r", "g", and "b". Values are
-integers from 0 to 255.
-
----
-
-`EightBitColorPicker.prototype.getForegroundEscapeSequence`
-
-Returns the terminal escape code sequence to use the current color as a
-foreground color.
-
----
-
-`EightBitColorPicker.prototype.getBackgroundEscapeSequence`
-
-Returns the terminal escape code sequence to use the current color as a
-background color.
-
----
-
-`EightBitColorPicker.prototype.show`
-
-Displays the color picker selection view
-
----
-
-`EightBitColorPicker.prototype.hide`
-
-Hides the color picker selection view
-
----
-
-`EightBitColorPicker.prototype.updateColor`
-
-Updates the value of `this.color` and its representations. This takes two
-arguments:
-
-* `color`: The color from 0-255 to use
-* `previewOnly`: [optional] Only updates preview representation if truthy and
-  leaves `this.color` alone
-
----
-
-`EightBitColorPicker.prototype.restoreColor`
-
-Restores preview color representations to match the value of `this.color`.
-
----
+Documentation
+-------------
+See [this page](bilalq.github.io/eight-bit-color-picker) for documentation.
 
 Browser Requirements
 --------------------
