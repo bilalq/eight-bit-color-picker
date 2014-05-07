@@ -62,7 +62,7 @@ var pickers = EightBitColorPicker.detect()
 
 Documentation
 -------------
-See [this page](bilalq.github.io/eight-bit-color-picker) for documentation.
+See [this page](http://bilalq.github.io/eight-bit-color-picker/) for documentation.
 
 Browser Requirements
 --------------------
