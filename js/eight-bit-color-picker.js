@@ -117,7 +117,7 @@
     this.validate()
 
     // Render color-picker UI
-    this.render()
+    render.call(this)
   }
 
   // Reference protoype in a variable to improve minification
@@ -126,15 +126,15 @@
   /**
    * Renders color-picker UI and modifies the HTML of the element
    */
-  pickerProto.render = function() {
+  var render = function() {
     // Set class on element
     this.el.classList.add(className)
 
     // Set inner HTML with subnodes based on a template
-    this.buildSubNodes()
+    buildSubNodes.call(this)
 
     // Populates and builds color map for picker
-    this.buildColorMapUI()
+    buildColorMapUI.call(this)
 
     // Declare exitListener
     var exitListener
@@ -158,7 +158,7 @@
   /**
    * Sets innerHTML of an EightBitColorPicker's element with a template
    */
-  pickerProto.buildSubNodes = function() {
+  var buildSubNodes = function() {
     this.el.innerHTML = String.prototype.concat.call(
       '<div class="ebcp-selection" style="background: ', this.getHexColor(),';">',
         '&nbsp;',
@@ -183,6 +183,20 @@
   }
 
   /**
+   * Convenience proxy to picker element's addEventListener function
+   */
+  pickerProto.addEventListener = function(type, listener, useCapture) {
+    this.el.addEventListener(type, listener, useCapture)
+  }
+
+  /**
+   * Convenience proxy to picker element's removeEventListener function
+   */
+  pickerProto.removeEventListener = function(type, listener, useCapture) {
+    this.el.removeEventListener(type, listener, useCapture)
+  }
+
+  /**
    * Updates the value of this.color and its representations
    *
    * @param {Number|String} color - The color from 0-255 to use
@@ -193,11 +207,20 @@
       , elements = this.loadSelectors()
     if (!color || !color.length || color.length > 3) { return }
     if (!isColorInRange(eightBitColor)) { return }
+    if (eightBitColor === this.color) { return }
 
     var twentyFourBitColor = this.colorMap[eightBitColor]
+
+    // If not preview only, then update this.color & dispatch change event
     if (!previewOnly) {
+      var event = new CustomEvent('colorChange', { detail: {
+        oldColor: this.color,
+        newColor: eightBitColor,
+        picker: this
+      }})
       this.color = eightBitColor
       elements.selectedColor.style.background = twentyFourBitColor
+      this.el.dispatchEvent(event)
     }
     elements.eightBitText.value = eightBitColor
     elements.hexText.value = twentyFourBitColor
@@ -233,7 +256,7 @@
   /**
    * Builds color map in the DOM and attach event listeners
    */
-  pickerProto.buildColorMapUI = function() {
+  var buildColorMapUI = function() {
     // Maintain reference to this
     var picker = this
 
@@ -333,6 +356,15 @@
   pickerProto.hide = function() {
     var selectionUI = this.loadSelectors().selectionUI
     selectionUI.classList.remove('ebcp-shown-selector')
+  }
+
+  /**
+   * Returns the element in which the picker was rendered
+   *
+   * @returns {DOMElement}
+   */
+  pickerProto.getElement = function() {
+    return this.el
   }
 
   /**
