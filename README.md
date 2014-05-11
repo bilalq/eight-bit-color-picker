@@ -3,7 +3,7 @@ Eight Bit Color Picker
 
 > UI component for picking a color from arbitrary 256 color palettes
 
-<img alt="Screenshot of color picker" src="http://i.imgur.com/djg6mOs.png?1" width="430" height="291">
+<img alt="Screenshot of color picker" src="http://i.imgur.com/NTFkbnT.png?1" width="420" height="290">
 
 This is a simple, flexible color-picker widget. It has no dependencies (not
 even on jQuery), so it's easy to just plug in and use. It weighs less than 3kb
