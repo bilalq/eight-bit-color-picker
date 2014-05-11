@@ -56,16 +56,16 @@ This widget is easy to customize and extend.
 
 
 <div class="demo">
-  You can set default colors (like these blue and green ones):
+  You can set default colors (these stay blue and green even after a refresh):
 
-  <div data-color="81" class="eight-bit-color-picker"></div>
-  <div data-color="82" class="eight-bit-color-picker"></div>
+  <div data-color="122" class="eight-bit-color-picker"></div>
+  <div data-color="117" class="eight-bit-color-picker"></div>
 </div>
 
 <div class="demo">
   Or even change the color palette entirely:
 
-  <div class="eight-bit-color-picker blue-palette"></div>
+  <div class="eight-bit-color-picker xterm-palette"></div>
 </div>
 
 Check out [the docs]({{ site.baseurl}}/docs) for more details.

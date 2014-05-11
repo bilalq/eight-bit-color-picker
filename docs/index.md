@@ -19,13 +19,13 @@ constuctor, or by using the `detect` function.
 The constructor takes in an object with the following properties:
 
 * `el`: Either a string of an element ID or a DOMElement object *(required)*
-* `colorMap`: An array of 256 strings in full hex format (e.g: `#ffffff`)
+* `palette`: An array of 256 strings in full hex format (e.g: `#ffffff`)
 * `color`: Initial color to set picker instance at (valid values are between 0-255)
 
-If no `colorMap` is specified, the xterm-256color palette is used by default. If
-`color` is not specified in the argument, it will first check if the targeted
-element has a `data-color` attribute and use that if so. Otherwise, a random
-color from the palette will be chosen.
+If no `palette` is specified, a sensible default is used. If `color` is not
+specified in the argument, it will first check if the targeted element has a
+`data-color` attribute and use that if so. Otherwise, a random color from the
+palette will be chosen.
 
 ```javascript
 var picker = new EightBitColorPicker({el: 'example', color: 6})

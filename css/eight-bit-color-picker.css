@@ -44,13 +44,13 @@
   visibility: visible;
 }
 
-/* Have color map and preview values display inline */
-.ebcp-selector .ebcp-colormap, .ebcp-selector .ebcp-preview-values{
+/* Have color palette and preview values display inline */
+.ebcp-selector .ebcp-palette, .ebcp-selector .ebcp-preview-values{
   display: inline-block;
 }
 
-/* Define size of colormap */
-.ebcp-colormap {
+/* Define size of palette */
+.ebcp-palette {
   max-width: 164px;
 }
 
@@ -62,12 +62,12 @@
 }
 
 /* Use inline-block for color picker grid */
-.ebcp-colormap-row {
+.ebcp-palette-row {
   display: inline-block;
 }
 
 /* Squares in color picker */
-.ebcp-colormap-row > div {
+.ebcp-palette-row > div {
   width: 10px;
   height: 10px;
   cursor: crosshair;
