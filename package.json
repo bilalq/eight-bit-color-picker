@@ -1,6 +1,6 @@
 {
   "name": "eight-bit-color-picker",
-  "version": "0.3.1",
+  "version": "1.0.0",
   "description": "UI component for picking a color from arbitrary 256 color palettes",
   "repository": {
     "type": "git",
