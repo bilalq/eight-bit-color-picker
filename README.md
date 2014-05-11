@@ -60,6 +60,18 @@ the class `eight-bit-color-picker` and instantiate them as pickers.
 var pickers = EightBitColorPicker.detect()
 ```
 
+Custom Palettes
+---------------
+The documentation goes into this in more detail, but you can easily customize
+the color palette on a per picker basis. For those interested in writing web
+apps that relate to the CLI, see
+[this xterm-256color palette](https://github.com/bilalq/xterm-256color-palette).
+
+```javascript
+var customPalette = [ /* Some array of 256 hex color strings */ ]
+var picker = new EightBitColorPicker({ el: 'target', palette: customPalette })
+```
+
 Documentation
 -------------
 See [this page](http://bilalq.github.io/eight-bit-color-picker/) for documentation.
