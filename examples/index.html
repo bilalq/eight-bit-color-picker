@@ -15,19 +15,18 @@
   <h1 class="title">Eight Bit Color Picker</h1>
   <div id="target"></div>
   <div id="custom-palette"></div>
+  <button id="toggle">Toggle</button>
+  <div id="toggler"></div>
 
   <script type="text/javascript" src="eight-bit-color-picker.js"></script>
   <script type="text/javascript">
   (function() {
-    var ebcp = new EightBitColorPicker({el: 'target'})
-    window.ebcp = ebcp
-    ebcp.addEventListener('colorChange', function(e) {
+    window.ebcp = new EightBitColorPicker({el: 'target'})
+    window.ebcp.addEventListener('colorChange', function(e) {
       console.log(e.detail)
     })
 
-    var ebcp = new EightBitColorPicker({
-      el: 'custom-palette',
-      palette: [
+    var xtermPalette = [
         '#000000', '#800000', '#008000', '#808000', '#000080', '#800080', '#008080',
         '#c0c0c0', '#808080', '#ff0000', '#00ff00', '#ffff00', '#0000ff', '#ff00ff',
         '#00ffff', '#ffffff', '#000000', '#00005f', '#000087', '#0000af', '#0000d7',
@@ -65,7 +64,23 @@
         '#444444', '#4e4e4e', '#585858', '#626262', '#6c6c6c', '#767676', '#808080',
         '#8a8a8a', '#949494', '#9e9e9e', '#a8a8a8', '#b2b2b2', '#bcbcbc', '#c6c6c6',
         '#d0d0d0', '#dadada', '#e4e4e4', '#eeeeee'
-      ]
+    ]
+    window.xtermEBCP = new EightBitColorPicker({
+      el: 'custom-palette',
+      palette: xtermPalette
+    })
+
+    var defaultPalette = EightBitColorPicker.getDefaultPalette()
+      , original = true
+    var togglingEBCP = new EightBitColorPicker({el: 'toggler'})
+    document.getElementById('toggle').addEventListener('click', function(e) {
+      if (original) {
+        original = false
+        togglingEBCP.updatePalette(xtermPalette)
+      } else {
+        original = true
+        togglingEBCP.updatePalette(defaultPalette)
+      }
     })
   }).call(this)
   </script>
