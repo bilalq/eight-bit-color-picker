@@ -72,6 +72,9 @@ var customPalette = [ /* Some array of 256 hex color strings */ ]
 var picker = new EightBitColorPicker({ el: 'target', palette: customPalette })
 ```
 
+You can even update the palette of an already instantiated picker by invoking
+`EightBitColorPicker.prototype.updatePalette`.
+
 Documentation
 -------------
 See [this page](http://bilalq.github.io/eight-bit-color-picker/) for documentation.

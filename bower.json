@@ -1,6 +1,6 @@
 {
   "name": "eight-bit-color-picker",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "UI component for picking a color from arbitrary 256 color palettes",
   "main": [
     "lib/eight-bit-color-picker.js",
