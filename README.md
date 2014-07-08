@@ -14,6 +14,10 @@ Since it exposes itself via the
 it will comply with whatever module loading system you're using. If you're
 not using one, it will expose a global called `EightBitColorPicker`.
 
+If you're using Angular, there is 
+[a directive](https://github.com/bilalq/ng8BitColorPicker) that builds on top of 
+this that you can use.
+
 Install
 -------
 You can of course go through the old-school copy/pasta routine, but here's the
